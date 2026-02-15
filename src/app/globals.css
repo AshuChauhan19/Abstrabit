@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --muted: rgba(23,23,23,0.65);
 }
 
 @theme inline {
@@ -14,13 +15,37 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: linear-gradient(180deg, #1aa6b9 0%, #4e6abf 100%);
+    --foreground: #e6eef8;
+    --muted: rgba(230,238,248,0.78);
   }
 }
 
 body {
-  background: var(--background);
+  background: var(--background) no-repeat fixed;
+  background-size: cover;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Theme-aware text utilities */
+.text-foreground {
+  color: var(--foreground) !important;
+}
+
+.text-muted {
+  color: var(--muted) !important;
+}
+
+/* Homepage specific background — overrides body for the home route */
+.home-background {
+  background-image: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(245,247,250,0.92));
+  background-color: #f7fbff;
+}
+
+@media (prefers-color-scheme: dark) {
+  .home-background {
+    background-image: linear-gradient(180deg, rgba(7,17,41,0.9), rgba(11,15,26,0.9));
+    background-color: transparent;
+  }
 }

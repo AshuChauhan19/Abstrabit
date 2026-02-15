@@ -37,9 +37,12 @@ export default async function RootLayout({
       >
         <nav className="bg-white shadow-sm border-b border-gray-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <h1 className="text-2xl font-bold text-gray-900">
-              Smart Bookmarks
-            </h1>
+            <a href="/" className="flex items-center gap-3 text-2xl font-bold text-gray-900 hover:opacity-90">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-blue-600">
+                <path d="M6 2a2 2 0 0 0-2 2v16l8-4 8 4V4a2 2 0 0 0-2-2H6z" />
+              </svg>
+              <span>Smart Bookmarks</span>
+            </a>
             <AuthButton user={user} />
           </div>
         </nav>
